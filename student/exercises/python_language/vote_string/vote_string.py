@@ -1,0 +1,26 @@
+"""
+Vote String
+-----------
+You have the string below, which is a set of "yes/no" votes,
+where "y" or "Y" means yes and "n" or "N" means no. Determine 
+the percentages of yes and no votes.
+
+::
+
+    votes = "y y n N Y Y n n N y Y n Y"
+
+See :ref:`vote-string-solution`.
+"""
+# Begin exercise
+
+votes = "y y n N Y Y n n N y Y n Y"
+votes = votes.lower()
+total = float(len(votes))
+
+#pct_yes = 100*sum([x=='y' for x in votes])/total
+#pct_no = 100*sum([x=='n' for x in votes])/total
+
+pct_yes = 100*votes.count('y')/total
+pct_no = 100*votes.count('n')/total
+
+'{yes:4.2f}% voted yes and {no:4.2f}% voted no.'.format(yes=pct_yes,no=pct_no)

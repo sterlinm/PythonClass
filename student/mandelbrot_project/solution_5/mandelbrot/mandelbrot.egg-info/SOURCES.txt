@@ -1,0 +1,9 @@
+setup.py
+mandelbrot/__init__.py
+mandelbrot/core.py
+mandelbrot/core_numpy.py
+mandelbrot/main.py
+mandelbrot.egg-info/PKG-INFO
+mandelbrot.egg-info/SOURCES.txt
+mandelbrot.egg-info/dependency_links.txt
+mandelbrot.egg-info/top_level.txt
