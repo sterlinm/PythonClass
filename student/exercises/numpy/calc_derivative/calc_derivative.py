@@ -19,12 +19,22 @@ trapezoidal rule.
 See :ref:`calc-derivative-solution`.
 """
 from numpy import linspace, pi, sin, cos, cumsum
-from matplotlib.pyplot import plot, show, subplot, legend, title
+from matplotlib.pyplot import plot, show, subplot, legend, title, draw
 
 # calculate the sin() function on evenly spaced data.
 x = linspace(0,2*pi,101)
 y = sin(x)
 
+subplot(3,1,1)
 plot(x,y)
-show()
 
+dy = y[1:]-y[:-1]
+dx = x[1:]-x[:-1]
+
+deriv_sin = dy / dx
+subplot(3,1,2)
+plot(x[:-1],deriv_sin)
+subplot(3,1,3)
+plot(x,cos(x))
+draw()
+show()

@@ -56,6 +56,9 @@ print momentum_dict(particles[0])
         
 
 class Particle(object):
+    """This is a particle object which uses descriptors to keep all attributes
+    in sync. It assumes that if energy or momentum change then it is velocity
+    (and not mass) which changed."""
     
     def __init__(self, mass, vel):
         self.__mass = mass
@@ -72,6 +75,15 @@ class Particle(object):
         self.__vel = value
         self.__momentum = self.__mass * self.__vel
         self.__energy = 0.5 * self.__mass * self.__vel**2.0
+    
+    #def set_momentum(self, value):
+    #    self.__momentum = value
+    #    self.__vel = self.__momentum / self.__mass
+    #    self.__energy = 0.5 * self.__mass * self.__vel**2.0
+    
+    #def set_energy(self, value):
+    #    self.__energy = value
+    #    self.__vel = sqrt
     
     def get_mass(self):
         return self.__mass
